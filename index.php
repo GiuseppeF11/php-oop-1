@@ -1,5 +1,22 @@
 <?php
-    echo 'Template PHP';
+    class Movie {
+        public $title;
+        public $category;
+        public function __construct($title, $category) {
+            $this->title = $title;
+            $this->category = $category;
+        }
+        public function kids_block($category) {
+            if($category = 'horror' || $category = 'thriller') {
+                return '18+';
+            }
+            else {
+                return 'Buona visione';
+            }
+        }
+    }
+
+    $saw = new Movie('Saw l\'enigmista','horror',);
 ?>
 
 <!DOCTYPE html>
@@ -18,14 +35,12 @@
         <!-- AXIOS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js" integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        <title>Template PHP</title>
+        <title>php-oop-1</title>
     </head>
     <body>
 
         <div id="app">
-                <h1>
-                        {{ message }}
-                </h1>
+                <h1><?php echo $saw['title'] ?></h1>
         </div>
 
         <!-- BOOTSTRAP JS -->
